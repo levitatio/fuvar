@@ -1,6 +1,6 @@
 
-function Button (text) {
-  return <button value={text} />;
+function Button (props) {
+  return <button value={props.text} />;
 }
 
 export default Button;
