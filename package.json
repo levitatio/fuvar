@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start --port $PORT"
+    "start": "next start --port $PORT",
+    "lint" : "semistandard --verbose"
   },
   "dependencies": {
     "next": "9.3.0",
     "next-i18next": "^4.2.1",
     "react": "16.13.0",
     "react-dom": "16.13.0"
+  },
+  "devDependencies": {
+    "semistandard": "^14.2.0"
   }
 }
