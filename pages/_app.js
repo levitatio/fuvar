@@ -1,6 +1,7 @@
 import App from 'next/app';
 import Head from 'next/head';
 import Header from '../partials/Header';
+import { appWithTranslation } from '../services/i18n';
 
 function FuvarApp ({ Component, pageProps }) {
   return (
@@ -19,4 +20,4 @@ export async function getServerSideProps (appContext) {
   const appProps = await App.getServerSideProps(appContext);
   return { ...appProps };
 }
-export default FuvarApp;
+export default appWithTranslation(FuvarApp);
