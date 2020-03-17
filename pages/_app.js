@@ -1,4 +1,5 @@
 import App from 'next/app';
+import '../style/style.css';
 import Head from 'next/head';
 import Header from '../partials/Header';
 import { appWithTranslation } from '../services/i18n';
@@ -10,7 +11,9 @@ function FuvarApp ({ Component, pageProps }) {
         <title>My first Next</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header {...pageProps} />
+      <header className='headerBar u-clearfix js-headerBar'>
+        <Header {...pageProps} />
+      </header>
       <Component {...pageProps} />
     </>
   );
