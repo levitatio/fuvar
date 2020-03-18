@@ -359,6 +359,20 @@ hr.smallSpacing {
     }
 }
 
+.language-btn{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.language-btn:hover {
+    text-decoration: none
+}
+
+.language-btn--disabled {
+    cursor: default;
+    opacity: .3
+}
+
 .btn {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -3445,7 +3459,7 @@ input[type="radio"]:checked + label:after {
     margin-bottom: 20px
 }
 
-.footer__middle {
+.footer__bottom {
     display: flex;
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
@@ -3472,16 +3486,16 @@ input[type="radio"]:checked + label:after {
         float: right
     }
 
-    .footer__middle {
+    .footer__bottom {
         display: block;
         float: left
     }
 
-    .footer__middle img {
+    .footer__bottom img {
         display: block
     }
 
-    .footer__middle img:first-child {
+    .footer__bottom img:first-child {
         margin: 20px 0 20px 0
     }
 }
@@ -3504,20 +3518,20 @@ input[type="radio"]:checked + label:after {
         margin: 0 auto 30px auto
     }
 
-    .footer__middle {
+    .footer__bottom {
         float: none
     }
 
-    .footer__middle img {
+    .footer__bottom img {
         margin: 0 auto 20px auto
     }
 
-    .footer__middle img:first-child {
+    .footer__bottom img:first-child {
         margin: 0 auto 20px auto
     }
 }
 
-.footer__bottom {
+.footer__middle {
     clear: both;
     display: -webkit-flex;
     display: -moz-flex;
@@ -3537,7 +3551,7 @@ input[type="radio"]:checked + label:after {
     margin-top: 30px
 }
 
-.footer__bottom p {
+.footer__middle p {
     margin-bottom: 0;
     font-size: 13px;
     font-weight: 300;
@@ -3579,7 +3593,7 @@ input[type="radio"]:checked + label:after {
 }
 
 @media only screen and (max-width: 640px) {
-    .footer__bottom {
+    .footer__middle {
         -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -3590,7 +3604,7 @@ input[type="radio"]:checked + label:after {
         justify-content: center
     }
 
-    .footer__bottom pÂ {
+    .footer__middle p {
         flex-basis: 100%;
         text-align: center
     }
