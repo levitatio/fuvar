@@ -9,7 +9,7 @@
 @font-face {
     font-family: "Proxima Nova";
     src: url("/web/fonts2/proximanova-regular.eot");
-    src: url("/web/fonts2/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-regular.woff2") format("woff2"), url("/web/fonts2/proximanova-regular.woff") format("woff"), url("/web/fonts2/proximanova-regular.ttf") format("truetype");
+    /* src: url("/web/fonts2/proximanova-regular.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-regular.woff2") format("woff2"), url("/web/fonts2/proximanova-regular.woff") format("woff"), url("/web/fonts2/proximanova-regular.ttf") format("truetype"); */
     font-weight: 300;
     font-style: normal
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: "Proxima Nova";
     src: url("/web/fonts2/proximanova-semibold.eot");
-    src: url("/web/fonts2/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-semibold.woff2") format("woff2"), url("/web/fonts2/proximanova-semibold.woff") format("woff"), url("/web/fonts2/proximanova-semibold.ttf") format("truetype");
+    /* src: url("/web/fonts2/proximanova-semibold.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-semibold.woff2") format("woff2"), url("/web/fonts2/proximanova-semibold.woff") format("woff"), url("/web/fonts2/proximanova-semibold.ttf") format("truetype"); */
     font-weight: 500;
     font-style: normal
 }
@@ -25,7 +25,7 @@
 @font-face {
     font-family: "Proxima Nova";
     src: url("/web/fonts2/proximanova-bold.eot");
-    src: url("/web/fonts2/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-bold.woff2") format("woff2"), url("/web/fonts2/proximanova-bold.woff") format("woff"), url("/web/fonts2/proximanova-bold.ttf") format("truetype");
+    /* src: url("/web/fonts2/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-bold.woff2") format("woff2"), url("/web/fonts2/proximanova-bold.woff") format("woff"), url("/web/fonts2/proximanova-bold.ttf") format("truetype"); */
     font-weight: 700;
     font-style: normal
 }
@@ -3708,7 +3708,7 @@ body.is-instantPrice .headerBar {
     line-height: 30px
 }
 
-.navBar a svg {
+.navBar a svg, img {
     margin: 3px 10px 0 0
 }
 
