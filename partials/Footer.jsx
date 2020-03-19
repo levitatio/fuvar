@@ -43,35 +43,6 @@ function Footer ({ t }, user) {
           <form />
         </div>
         <div className='footer__middle'>
-          <ul className='footer__languages u-push-20--mobile'>
-            <li><LanguageButton className='footer__languages__hu' language='hu'>
-              <img
-                src='assets/flags/hungary.png' srcSet='assets/flags/hungary@2x.png 2x, assets/flags/hungary@3x.png 3x'
-                className='hungary'
-              />
-              {'Magyar'}
-                </LanguageButton>
-            </li>
-            <li><LanguageButton className='footer__languages__en' language='en'>
-              <img
-                src='assets/flags/united-kingdom.png' srcSet='assets/flags/united-kingdom@2x.png 2x, assets/flags/united-kingdom@3x.png 3x'
-                className='english'
-              />
-              {'English'}
-                </LanguageButton>
-            </li>
-            <li><LanguageButton className='footer__languages__hr' language='hr'>
-              <img
-                src='assets/flags/croatia.png' srcSet='assets/flags/croatia@2x.png 2x, assets/flags/croatia@3x.png 3x'
-                className='croatia'
-              />
-              {'Hrvatski'}
-                </LanguageButton>
-            </li>
-          </ul>
-          <p>Fuvar.hu © 2020</p>
-        </div>
-        <div className='footer__bottom'>
           <img
             src='assets/footer-bottom/barion.png'
             srcSet='assets/footer-bottom/barion@2x.png 2x, assets/footer-bottom/barion@3x.png 3x'
@@ -90,6 +61,36 @@ function Footer ({ t }, user) {
             // width="204" height="45"
             alt='HiVentures'
           />
+        </div>
+
+        <div className='footer__bottom'>
+          <ul className='footer__languages u-push-20--mobile'>
+            <li><LanguageButton className='footer__languages__hu' language='hu' title='Magyar'>
+              <img
+                src='assets/flags/hungary.png' srcSet='assets/flags/hungary@2x.png 2x, assets/flags/hungary@3x.png 3x'
+                className='hungary'
+              />
+              {'Magyar'}
+                </LanguageButton>
+            </li>
+            <li><LanguageButton className='footer__languages__en' language='en' title='English'>
+              <img
+                src='assets/flags/united-kingdom.png' srcSet='assets/flags/united-kingdom@2x.png 2x, assets/flags/united-kingdom@3x.png 3x'
+                className='english'
+              />
+              {'English'}
+                </LanguageButton>
+            </li>
+            <li><LanguageButton className='footer__languages__hr' language='hr' title='Hrvatski'>
+              <img
+                src='assets/flags/croatia.png' srcSet='assets/flags/croatia@2x.png 2x, assets/flags/croatia@3x.png 3x'
+                className='croatia'
+              />
+              {'Hrvatski'}
+                </LanguageButton>
+            </li>
+          </ul>
+          <p>Fuvar.hu © 2020</p>
         </div>
       </div>
     </footer>
