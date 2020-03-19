@@ -3,13 +3,14 @@ import { i18n } from '../../services/i18n';
 
 function LanguageButton (props) {
   return (
-    <button
-      type='button' className='language-btn'
+    <a
+      className='language-btn'
       value={props.text}
+      title={props.title}
       onClick={() => i18n.changeLanguage(props.language)}
     >
       {props.children}
-    </button>
+    </a>
   );
 }
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function MenuItem (props) {
   return (
     <Link href={props.href}>
-      <a className={props.class} title={props.title}>
+      <a className={props.class} title={props.title} onClick={props.handleClick}>
         {props.icon && <img src={props.icon} />}
         <span>{props.text}</span>
         {props.children}
