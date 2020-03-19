@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Proxima Nova";
     src: url("/web/fonts2/proximanova-light.eot");
-    src: url("/web/fonts2/proximanova-light.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-light.woff2") format("woff2"), url("/web/fonts2/proximanova-light.woff") format("woff"), url("/web/fonts2/proximanova-light.ttf") format("truetype");
+    /* src: url("/web/fonts2/proximanova-light.eot?#iefix") format("embedded-opentype"), url("/web/fonts2/proximanova-light.woff2") format("woff2"), url("/web/fonts2/proximanova-light.woff") format("woff"), url("/web/fonts2/proximanova-light.ttf") format("truetype"); */
     font-weight: 200;
     font-style: normal
 }
@@ -3459,7 +3459,7 @@ input[type="radio"]:checked + label:after {
     margin-bottom: 20px
 }
 
-.footer__bottom {
+.footer__middle {
     display: flex;
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
@@ -3486,16 +3486,16 @@ input[type="radio"]:checked + label:after {
         float: right
     }
 
-    .footer__bottom {
+    .footer__middle {
         display: block;
         float: left
     }
 
-    .footer__bottom img {
+    .footer__middle img {
         display: block
     }
 
-    .footer__bottom img:first-child {
+    .footer__middle img:first-child {
         margin: 20px 0 20px 0
     }
 }
@@ -3518,20 +3518,20 @@ input[type="radio"]:checked + label:after {
         margin: 0 auto 30px auto
     }
 
-    .footer__bottom {
+    .footer__middle {
         float: none
     }
 
-    .footer__bottom img {
+    .footer__middle img {
         margin: 0 auto 20px auto
     }
 
-    .footer__bottom img:first-child {
+    .footer__middle img:first-child {
         margin: 0 auto 20px auto
     }
 }
 
-.footer__middle {
+.footer__bottom {
     clear: both;
     display: -webkit-flex;
     display: -moz-flex;
@@ -3551,7 +3551,7 @@ input[type="radio"]:checked + label:after {
     margin-top: 30px
 }
 
-.footer__middle p {
+.footer__bottom p {
     margin-bottom: 0;
     font-size: 13px;
     font-weight: 300;
@@ -3593,7 +3593,7 @@ input[type="radio"]:checked + label:after {
 }
 
 @media only screen and (max-width: 640px) {
-    .footer__middle {
+    .footer__bottom {
         -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -3604,7 +3604,7 @@ input[type="radio"]:checked + label:after {
         justify-content: center
     }
 
-    .footer__middle p {
+    .footer__bottom p {
         flex-basis: 100%;
         text-align: center
     }
@@ -6357,7 +6357,7 @@ body.is-warning .homePage {
     left: 0;
     width: 100%;
     padding-bottom: 28.125%;
-    background-image: url('/web/images/backgrounds/hero-bottom.svg');
+    /* background-image: url('/web/images/backgrounds/hero-bottom.svg'); */
     background-size: cover;
     background-position: center bottom;
     pointer-events: none
@@ -6448,7 +6448,7 @@ body.is-warning .homePage {
     -ms-flex-align: end;
     -webkit-align-items: flex-end;
     align-items: flex-end;
-    background-image: url('/web/images/home/hero-city.png');
+    /* background-image: url('/web/images/home/hero-city.png'); */
     background-position: center 30%;
     background-repeat: no-repeat
 }
@@ -6945,7 +6945,7 @@ body.is-warning .homePage {
 
 .homeBanners {
     margin-bottom: -1px;
-    background-image: url('/web/images/backgrounds/footer.svg');
+    /* background-image: url('/web/images/backgrounds/footer.svg'); */
     background-size: 100% auto;
     background-position: center bottom;
     background-repeat: no-repeat
@@ -6962,7 +6962,7 @@ body.is-warning .homePage {
 .homeBusinessBanner div:first-child {
     width: 48%;
     border-radius: 8px 0 0 8px;
-    background-image: url('/web/images/home/fulfillment@2x.jpg');
+    /* background-image: url('/web/images/home/fulfillment@2x.jpg'); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover

@@ -9,8 +9,8 @@ function FuvarApp ({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>My first Next</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Fuvar.hu</title>
+        {/* <link rel='icon' href='/favicon.ico' /> */}
       </Head>
       <Header {...pageProps} />
       <Component {...pageProps} />
