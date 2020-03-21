@@ -10,75 +10,19 @@ function Home ({ t }, user) {
             <div className='flexRow'>
               <div className='col-6 col-12--md'>
                 <div className='homeHeroSection__text'>
-                  <h1>Fuvarozót keresel?<br />Találd meg a legjobb ajánlatot!</h1>
-                  <p>Fuvarozóink versenyeztetésével jelentős költséget és időt takaríthatsz meg. Tedd fel ajánlatkérésed ingyen, a többit intézzük.</p>
-                </div>
-                <div className='homeHeroSection__categories flexRow'>
-                  <div className='col-4'>
-                    <a href='ajanlatkeres?cat=9' title='Raklapos szállítás'>
-                      <svg className='icn icn--48 icn--primary'>
-                        <use xlinkHref='' />
-                      </svg>
-                      <h3>Raklapos szállítás</h3>
-                      <small className='u-textAlignCenter'>EUR, részrakomány</small>
-                    </a>
-                  </div>
-                  <div className='col-4'>
-                    <a href='ajanlatkeres?cat=1' title='Költöztetés'>
-                      <svg className='icn icn--48 icn--primary'>
-                        <use xlinkHref='' />
-                      </svg>
-                      <h3>Költöztetés</h3>
-                      <small className='u-textAlignCenter'>Lakás, ház, iroda</small>
-                    </a>
-                  </div>
-                  <div className='col-4'>
-                    <a href='ajanlatkeres?cat=14' title='Bútorszállítás'>
-                      <svg className='icn icn--48 icn--primary'>
-                        <use xlinkHref='' />
-                      </svg>
-                      <h3>Bútorszállítás</h3>
-                      <small className='u-textAlignCenter'>Szekrény, fotel, ágy</small>
-                    </a>
-                  </div>
-                  <div className='col-4'>
-                    <a href='ajanlatkeres?cat=7' title='Háztartási eszköz szállítás'>
-                      <svg className='icn icn--48 icn--primary'>
-                        <use xlinkHref='' />
-                      </svg>
-                      <h3>Háztartási eszköz szállítás</h3>
-                      <small className='u-textAlignCenter'>Hűtő, TV, mosógép</small>
-                    </a>
-                  </div>
-                  <div className='col-4'>
-                    <a href='ikea' title='IKEA Házhozszállítás'>
-                      <svg className='icn icn--48 icn--primary'>
-                        <use xlinkHref='' />
-                      </svg>
-                      <h3>IKEA</h3>
-                      <small className='u-textAlignCenter'>Házhozszállítás</small>
-                    </a>
-                  </div>
-                  <div className='col-4'>
-                    <a href='csomagkuldes?cat=2' title='Csomagszállítás'>
-                      <svg className='icn icn--48 icn--primary'>
-                        <use xlinkHref='' />
-                      </svg>
-                      <h3>Csomagszállítás</h3>
-                      <small className='u-textAlignCenter'>Doboz, boríték</small>
-                    </a>
-                  </div>
+                  <h1>{t('focus-on-really-important-things')}</h1>
+                  <p>{t('imagine-how-much-time')}</p>
+                  <p>{t('can-we-help-you')}</p>
                 </div>
               </div>
               <div className='col-6 homeHeroSection__illustration'>
-                <div>
-                  <img src='assets/illustration.png' srcSet='assets/illustration@2x.png, assets/illustration@3x.png' alt='Fuvarozót keresel? Találd meg a legjobb ajánlatot!' width='395' height='399' className='js-homeMen' style={{ bottom: '0px' }} />
-                </div>
+                <img src='assets/illustration.png' srcSet='assets/illustration@2x.png, assets/illustration@3x.png' alt='Fuvarozót keresel? Találd meg a legjobb ajánlatot!' width='395' height='399' className='js-homeMen' style={{ bottom: '0px' }} />
               </div>
             </div>
-            <a className='btn btn--primary btn--big btn--expended--mobile' href='ajanlatkeres' title='Kérj ajánlatot most'>Kezdjük el!</a>
+            <a className='btn btn--primary btn--big btn--expended--mobile' href='ajanlatkeres' title='Kérj ajánlatot most'>{t('contact-us')}</a>
           </div>
         </section>
+
         <section className='fulfillmentPage fulfillmentHeroSection'>
           <div className='container'>
             <h1 className='u-maxWidth-16'>{t('how-it-works-in-practice')}</h1>
