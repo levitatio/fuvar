@@ -15,5 +15,16 @@
     "user-friendly-administration-interface": "Átlátható adminisztrációs felület",
     "user-friendly-administration-interface-description": "Kövesd naprakészen csomagjaid állapotát. A nyomkövetés természetesen a vásárlóidnak is elérhető.",
     "transparent-invoicing": "Átlátható számlázás",
-    "transparent-invoicing-description": "Az összes szállítási megbízásaidról tételesen, havonta egy számlát állítunk ki."
+    "transparent-invoicing-description": "Az összes szállítási megbízásaidról tételesen, havonta egy számlát állítunk ki.",
+    "want-more-details": "Érdekelnek a részletek?",
+    "enter-your-contact-information": "Add meg elérhetőségeidet és kollégánk hamarosan felveszi veled a kapcsolatot.",
+    "full-name": "Teljes név",
+    "phone-number": "Telefonszám",
+    "email": "Email cím",
+    "webstore-url": "Webáruház linkje",
+    "package-dimension": "Átlagos csomagméretek",
+    "number-of-monthly-shipments": "Havi szállítások száma",
+    "contact": "Kapcsolat felvétele",
+    "partners": "Alvállalkozóink",
+    "partners-description": "Minden egyes szállítási megbízásnál az alábbi szolgáltatók közül választhatsz. (Természetesen Neked elég csak velünk szerződnöd, a többit mi intézzük)"
  }

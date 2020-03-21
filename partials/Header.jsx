@@ -3,21 +3,17 @@ import PropTypes from 'prop-types';
 import { withTranslation } from '../services/i18n';
 import MenuItem from '../components/menu/MenuItem';
 
-function Header ({ t }, user) {
+function Header({ t }, user) {
   const [isOpenMobilNav, setMobileNav] = useState('u-hidden');
   const container = useRef(null);
 
-  function handleClickOutside (event) {
+  function handleClickOutside(event) {
     if (container.current && !container.current.contains(event.target)) {
       setMobileNav('u-hidden');
     }
   }
 
-  function handleClickAfterButton () {
-    setMobileNav('u-hidden');
-  }
-
-  function handleCilckButton () {
+  function handleCilckButton() {
     setMobileNav('');
   }
 
@@ -61,14 +57,14 @@ function Header ({ t }, user) {
 
         </div>
       </header>
-      <nav className={`mobileNavDropdown menu u-maxWidth-5 ${isOpenMobilNav}`} style={{ right: '51px' }}>
+      <nav ref={container} className={`mobileNavDropdown menu u-maxWidth-5 ${isOpenMobilNav}`} style={{ right: '51px' }}>
         <ul>
           <li><MenuItem href='/#how-it-works' className='icn icn--24 icn--gray' icon='assets/help.svg' text={t('így-működik')} title={t('így-működik')} /></li>
-          <li><MenuItem href='ajanlatkeres' className='icn icn--24 icn--gray' icon='assets/add-box.svg' text={t('ajánlatkérés')} title={t('ajánlatkérés')} /></li>
+          <li><MenuItem href='/' className='icn icn--24 icn--gray' icon='assets/add-box.svg' text={t('ajánlatkérés')} title={t('ajánlatkérés')} /></li>
           <li><MenuItem href='/' className='icn icn--24 icn--gray' icon='assets/tree.svg' text={t('környezetünkért')} title={t('környezetünkért')} /></li>
           <li><MenuItem href='/' className='icn icn--24 icn--gray' text={t('bejelentkezés')} title={t('bejelentkezés')} /></li>
-          <li><MenuItem href='signup' className='item' text={t('regisztráció')} title={t('regisztráció')} /></li>
-          <li><MenuItem href='gyik' className='item' text={t('segítség')} title={t('segítség')} /></li>
+          <li><MenuItem href='/' className='item' text={t('regisztráció')} title={t('regisztráció')} /></li>
+          <li><MenuItem href='/' className='item' text={t('segítség')} title={t('segítség')} /></li>
         </ul>
       </nav>
     </>
@@ -76,7 +72,7 @@ function Header ({ t }, user) {
 }
 
 Header.getServerSideProps = async () => ({
-  namespacesRequired: ['header']
+  namespacesRequired: ['header'],
 });
 
 Header.propTypes = {
