@@ -1278,7 +1278,7 @@ input[type="checkbox"] + label:after {
     left: 0;
     width: 18px;
     height: 18px;
-    background: url('/web/images/icons/checkbox.svg');
+    /* background: url('/web/images/icons/checkbox.svg'); */
     transition: opacity .3s, transform .3s;
     -o-transition: opacity .3s, transform .3s;
     -ms-transition: opacity .3s, transform .3s;
@@ -6019,7 +6019,7 @@ body.is-warning .fulfillmentPage {
 .fulfillmentHeroSection {
     position: relative;
     padding: 200px 0 0 0;
-    background-image: url('/web/images/backgrounds/fulfillment-page.jpg');
+    /* background-image: url('/web/images/backgrounds/fulfillment-page.jpg'); */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% auto;

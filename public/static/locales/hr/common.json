@@ -15,5 +15,16 @@
     "user-friendly-administration-interface": "HR-User friendly administration interface",
     "user-friendly-administration-interface-description": "HR-Track your packages. Of course, tracking is also available for your clients.",
     "transparent-invoicing": "HR-Transparent invoicing",
-    "transparent-invoicing-description": "HR-We issue one itemized invoice per month for all your shipping assignment."
+    "transparent-invoicing-description": "HR-We issue one itemized invoice per month for all your shipping assignment.",
+    "want-more-details": "HR-Want more details?",
+    "enter-your-contact-information": "HR-Enter your contact information and our colleague will contact you shortly.",
+    "full-name": "HR-Full name",
+    "phone-number": "HR-Phone number",
+    "email": "HR-Email address",
+    "webstore-url": "HR-Webstore URL",
+    "package-dimension": "HR-Package dimensions",
+    "number-of-monthly-shipments": "HR-Number of monthly shipments",
+    "contact": "HR-contact",
+    "partners": "HR-Partners",
+    "partners-description": "HR-You can choose from following service providers for each of your shipping assignments. (Of course, you need to sign a contract only with us)"
  }
