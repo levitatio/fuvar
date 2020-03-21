@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import { withTranslation } from '../services/i18n';
 
-function Home ({ t }, user) {
+function Home({ t }, user) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const reqBody = {};
+    data.forEach((value, key) => { reqBody[key] = value; });
+    const body = JSON.stringify(reqBody);
+    //apiRequest
+    console.log(body);
+  }
+
   return (
     <>
       <main className='homePage'>
@@ -16,14 +26,14 @@ function Home ({ t }, user) {
                 </div>
               </div>
               <div className='col-6 homeHeroSection__illustration'>
-                <img src='assets/illustration.png' srcSet='assets/illustration@2x.png, assets/illustration@3x.png' alt='Fuvarozót keresel? Találd meg a legjobb ajánlatot!' width='395' height='399' className='js-homeMen' style={{ bottom: '0px' }} />
+                <img src='assets/illustration.png' srcSet='assets/illustration@2x.png, assets/illustration@3x.png' alt='Fuvarozót keresel? Találd meg a legjobb ajánlatot!' width='395' height='399' className='js-homeMen' style={{ bottom: '0px', position: 'static' }} />
               </div>
             </div>
             <a className='btn btn--primary btn--big btn--expended--mobile' href='ajanlatkeres' title='Kérj ajánlatot most'>{t('contact-us')}</a>
           </div>
         </section>
 
-        <section className='fulfillmentPage fulfillmentHeroSection'>
+        <section className='fulfillmentPage fulfillmentHeroSection' id='how-it-works'>
           <div className='container'>
             <h1 className='u-maxWidth-16'>{t('how-it-works-in-practice')}</h1>
             <div className='flexRow'>
@@ -76,10 +86,9 @@ function Home ({ t }, user) {
 
         <section className='fulfillmentPage fulfillmentPartners'>
           <div className='container'>
-            <h2>Partnereink)</h2>
+            <h2>{t('partners')}</h2>
             <p className='u-maxWidth-20 u-center'>
-              Minden egyes szállítási megbízásánál az alábbi szolgáltatók közül választhatsz.<br />
-              <small>(Természetesen Neked elég csak velünk szerződnöd)</small>
+              {t('partners-description')}<br />
             </p>
             <ul>
               <li>
@@ -94,94 +103,65 @@ function Home ({ t }, user) {
             </ul>
           </div>
         </section>
+
         <section className='fulfillmentPage fulfillmentContact container'>
-          <h2>Érdekelnek a részletek?</h2>
-          <p className='u-maxWidth-20 u-center'>Add meg elérhetőségeidet és kollégánk hamarosan felveszi veled a kapcsolatot.</p>
-          <form className='flexRow u-maxWidth-20 u-push-20 u-center is-validate js-fulfillmentForm' action='fulfillment' method='POST' novalidate='novalidate'>
-            <div className='col-6 col-12--sm u-push-20'>
-              <label>Vezetéknév:</label>
-              <input type='text' name='lastname' className='required' />
+          <h2>{t('want-more-details')}</h2>
+          <p className='u-maxWidth-20 u-center'>{t('enter-your-contact-information')}</p>
+          <form className='flexRow u-maxWidth-20 u-push-20 u-center is-validate js-fulfillmentForm' onSubmit={handleSubmit} >
+            <div className='col-6 col-12--sm'>
+              <div className='col-6 col-12--sm u-push-20'>
+                <label>{t('full-name')}:</label>
+                <input type='text' name='name' className='required' placeholder={t('full-name')} required />
+              </div>
+              <div className='col-6 col-12--sm u-push-20'>
+                <label>{t('phone-number')}:</label>
+                <input type='number' name='phone' className='required' placeholder={t('phone-number')} required />
+              </div>
+              <div className='col-6 col-12--sm u-push-20'>
+                <label>{t('email')}:</label>
+                <input type='email' name='email' className='required' placeholder={t('email')} required />
+              </div>
             </div>
-            <div className='col-6 col-12--sm u-push-20'>
-              <label>Keresztnév:</label>
-              <input type='text' name='firstname' className='required' />
-            </div>
-            <div className='col-6 col-12--sm u-push-20'>
-              <label>Telefonszám:</label>
-              <input type='text' name='phone' className='required' />
-            </div>
-            <div className='col-6 col-12--sm u-push-20'>
-              <label>Email cím:</label>
-              <input type='text' name='email' className='required' />
+            <div className='col-6 col-12--sm'>
+              <div className='col-6 col-12--sm u-push-20'>
+                <label>{t('webstore-url')}:</label>
+                <input type='url' name='webshop' className='required' size="" placeholder={t('webstore-url')} required />
+              </div>
+              <div className='col-6 col-12--sm'>
+                <label>{t('package-dimension')}:</label>
+                <input list="mylist" type='text' name='product' className='required' placeholder={t('package-dimension')} required />
+
+                <datalist id="mylist">
+                  <option value="1">one</option>
+                  <option value="2">two</option>
+                  <option value="3">three</option>
+                  <option value="4">four</option>
+                </datalist>
+              </div>
+              <div className='col-6 col-12--sm u-push-20'>
+                <label>{t('number-of-monthly-shipments')}:</label>
+                <input type='number' name='delivery_count' className='required' placeholder={t('number-of-monthly-shipments')} required />
+              </div>
             </div>
             <div className='col-12'>
-              <small>A megadott elérhetőségeken csak és kizárólag a fenti webáruházas szállítással kapcsolatban fogunk keresni. Azokat harmadik félnek nem adjuk ki, és semmilyen más marketing célra nem használjuk fel.</small>
-            </div>
-            <div className='col-6 col-12--sm'>
-              <label>Csomagméret:</label>
-              <div className='u-push-20'>
-                <div className='checkboxWrap'>
-                  <input type='checkbox' id='shipment_type_0' name='shipment_type[]' value='Boríték' className='js-confirm' />
-                  <label for='shipment_type_0' />
-                </div>
-                <label className='label--thin' for='shipment_type_0'>Boríték</label>
-              </div>
-              <div className='u-push-20'>
-                <div className='checkboxWrap'>
-                  <input type='checkbox' id='shipment_type_1' name='shipment_type[]' value='Csomag [1kg - 40kg között]' className='js-confirm' />
-                  <label for='shipment_type_1' />
-                </div>
-                <label className='label--thin' for='shipment_type_1'>Csomag [1kg - 40kg között]</label>
-              </div>
-              <div className='u-push-20'>
-                <div className='checkboxWrap'>
-                  <input type='checkbox' id='shipment_type_2' name='shipment_type[]' value='Csomag [40kg felett]' className='js-confirm' />
-                  <label for='shipment_type_2' />
-                </div>
-                <label className='label--thin' for='shipment_type_2'>Csomag [40kg felett]</label>
-              </div>
-              <div className='u-push-20'>
-                <div className='checkboxWrap'>
-                  <input type='checkbox' id='shipment_type_3' name='shipment_type[]' value='Raklap [max 1000kg]' className='js-confirm' />
-                  <label for='shipment_type_3' />
-                </div>
-                <label className='label--thin' for='shipment_type_3'>Raklap [max 1000kg]</label>
-              </div>
-            </div>
-            <div className='col-6 col-12--sm'>
-              <label>Webáruház linkje:</label>
-              <input type='text' name='webshop' className='required' />
-              <div className=' u-pushTop-20'>
-                <label>Feladási telephely:</label>
-                <input type='text' name='pickup' className='required' />
-              </div>
-            </div>
-            <div className='col-6 col-12--sm u-push-20'>
-              <label>Heti szállítások száma:</label>
-              <input type='text' name='delivery_count' className='required' />
-            </div>
-            <div className='col-6 col-12--sm'>
-              <label>Termék megnevezése / leírása:</label>
-              <input type='text' name='product' className='required' />
-            </div>
-            <div className='col-12 col-12--sm u-push-20'>
-              <label>Egyéb:</label>
-              <div className='checkboxWrap'>
-                <input type='checkbox' id='fulfillment' name='request_fulfillment' value='1' className='js-confirm' />
-                <label for='fulfillment' />
-              </div>
-              <label className='label--thin' for='fulfillment'>A szállításon kívül fulfillment [raktározás, csomagolás, címkézés] szolgáltatást szeretnék.</label>
-            </div>
-            <div className='col-12'>
-              <div className='js-fulfillmentResponse' />
-              <input type='hidden' name='hash' value='71b8f3be0217df148bfbc7872c13b623' />
-              <input type='hidden' name='cptch' value='' />
-              <button type='submit' className='btn btn--primary btn--expended--mobile'>Küldés</button>
+              <button type='submit' className='btn btn--primary btn--expended--mobile'>{t('contact')}</button>
+
             </div>
           </form>
         </section>
       </main>
-
+      {/* <fieldset>
+          <legend>Selecting elements</legend>
+          <p>
+             <label>Select list</label>
+             <select id = "myList">
+               <option value = "1">one</option>
+               <option value = "2">two</option>
+               <option value = "3">three</option>
+               <option value = "4">four</option>
+             </select>
+          </p>
+       </fieldset> */}
       {/* <style jsx>{`
       .container {
         min-height: 100vh;
@@ -206,8 +186,8 @@ function Home ({ t }, user) {
   );
 }
 
-Home.getServerSideProps = async () => ({
-  namespacesRequired: ['common']
+Home.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
 });
 
 Home.propTypes = {

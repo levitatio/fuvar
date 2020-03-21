@@ -20,17 +20,17 @@ Error.getServerSideProps = async ({ res, err }) => {
   }
   return {
     namespacesRequired: ['common'],
-    statusCode
+    statusCode,
   };
 };
 
 Error.defaultProps = {
-  statusCode: null
+  statusCode: null,
 };
 
 Error.propTypes = {
   statusCode: PropTypes.number,
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
 };
 
 export default withTranslation('common')(Error);

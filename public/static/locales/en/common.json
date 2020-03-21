@@ -15,5 +15,16 @@
     "user-friendly-administration-interface": "User friendly administration interface",
     "user-friendly-administration-interface-description": "Track your packages. Of course, tracking is also available for your clients.",
     "transparent-invoicing": "Transparent invoicing",
-    "transparent-invoicing-description": "We issue one itemized invoice per month for all your shipping assignment."
+    "transparent-invoicing-description": "We issue one itemized invoice per month for all your shipping assignment.",
+    "want-more-details": "Want more details?",
+    "enter-your-contact-information": "Enter your contact information and our colleague will contact you shortly.",
+    "full-name": "Full name",
+    "phone-number": "Phone number",
+    "email": "Email address",
+    "webstore-url": "Webstore URL",
+    "package-dimension": "Package dimensions",
+    "number-of-monthly-shipments": "Number of monthly shipments",
+    "contact": "Contact",
+    "partners": "Partners",
+    "partners-description": "You can choose from following service providers for each of your shipping assignments. (Of course, you need to sign a contract only with us)"
  }

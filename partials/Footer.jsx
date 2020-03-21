@@ -43,27 +43,6 @@ function Footer ({ t }, user) {
           <form />
         </div>
         <div className='footer__middle'>
-          <img
-            src='assets/footer-bottom/barion.png'
-            srcSet='assets/footer-bottom/barion@2x.png 2x, assets/footer-bottom/barion@3x.png 3x'
-            //  width="208" height="25"
-            alt='Barion'
-          />
-          <img
-            src='assets/footer-bottom/hiventures.png'
-            srcSet='assets/footer-bottom/hiventures@2x.png 2x, assets/footer-bottom/hiventures@3x.png 3x'
-            // width="204" height="45"
-            alt='HiVentures'
-          />
-          <img
-            src='assets/footer-bottom/new-szechenyi-logo.png'
-            srcSet='assets/footer-bottom/new-szechenyi-logo@2x.png 2x, assets/footer-bottom/new-szechenyi-logo@3x.png 3x'
-            // width="204" height="45"
-            alt='HiVentures'
-          />
-        </div>
-
-        <div className='footer__bottom'>
           <ul className='footer__languages u-push-20--mobile'>
             <li><LanguageButton className='footer__languages__hu' language='hu' title='Magyar'>
               <img
@@ -92,7 +71,29 @@ function Footer ({ t }, user) {
           </ul>
           <p>Fuvar.hu © 2020</p>
         </div>
-      </div>
+ 
+        <div className='footer__bottom'>
+          <img
+            src='assets/footer-bottom/barion.png'
+            srcSet='assets/footer-bottom/barion@2x.png 2x, assets/footer-bottom/barion@3x.png 3x'
+            //  width="208" height="25"
+            alt='Barion'
+          />
+          <img
+            src='assets/footer-bottom/hiventures.png'
+            srcSet='assets/footer-bottom/hiventures@2x.png 2x, assets/footer-bottom/hiventures@3x.png 3x'
+            // width="204" height="45"
+            alt='HiVentures'
+          />
+          <img
+            src='assets/footer-bottom/new-szechenyi-logo.png'
+            srcSet='assets/footer-bottom/new-szechenyi-logo@2x.png 2x, assets/footer-bottom/new-szechenyi-logo@3x.png 3x'
+            // width="204" height="45"
+            alt='HiVentures'
+          />
+        </div>
+
+             </div>
     </footer>
   );
 }
