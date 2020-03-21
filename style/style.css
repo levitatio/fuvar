@@ -3681,8 +3681,8 @@ body.is-instantPrice .headerBar {
     margin-top: 3px
 }
 
-.headerBar__logo:hover svg {
-    fill: #13a052
+.headerBar__logo:hover svg{
+    fill:  #13a052
 }
 
 @media only screen and (max-width: 1023px) {

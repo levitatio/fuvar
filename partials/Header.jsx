@@ -33,7 +33,9 @@ function Header ({ t }, user) {
       <header className='headerBar u-clearfix js-headerBar'>
         <div className='container'>
           <a className='headerBar__logo' href='/' title='Fuvar.hu'>
-            <img src='assets/logo.svg' className='Logo' />
+            <svg className='Logo'>
+              <use href='assets/logo.svg#svg' />
+            </svg>
           </a>
           <nav className='navBar u-floatLeft u-desktopBigOnly'>
             <ul>
