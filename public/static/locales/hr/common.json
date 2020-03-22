@@ -26,5 +26,6 @@
     "number-of-monthly-shipments": "HR-Number of monthly shipments",
     "contact": "HR-contact",
     "partners": "HR-Partners",
-    "partners-description": "HR-You can choose from following service providers for each of your shipping assignments. (Of course, you need to sign a contract only with us)"
+    "partners-description": "HR-You can choose from following service providers for each of your shipping assignments. (Of course, you need to sign a contract only with us)",
+    "please-select": "HR-Please select..."
  }

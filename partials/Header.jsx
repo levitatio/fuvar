@@ -2,6 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from '../services/i18n';
 import MenuItem from '../components/menu/MenuItem';
+import NavBar from '../components/list/NavBar';
+
+const menuIconStyle = {
+  margin: '3px 10px 0 0'
+};
+
+const mobileMenuIconStyle = {
+  float: 'left',
+  margin: '12px 8px 0 0'
+};
 
 function Header ({ t }, user) {
   const [isOpenMobilNav, setMobileNav] = useState('u-hidden');
@@ -24,6 +34,14 @@ function Header ({ t }, user) {
     };
   });
 
+  const menuBarLeftItems = [{ href: '/#how-it-works', className: 'icn icn--24 icn--primary', icon: 'assets/help.svg', text: t('how-it-works') },
+    { href: '/', className: 'icn icn--24 icn--primary', icon: 'assets/add-box.svg', text: t('get-a-quote') },
+    { href: '/', className: 'icn icn--24 icn--primary', icon: 'assets/tree.svg', text: t('eco-mission') }];
+
+  const menuBarRightItems = [{ href: '/', className: 'js-openAuthModal', text: t('login') },
+    { href: '/', className: 'item', text: t('signup') },
+    { href: '/', className: 'item', text: t('help') }];
+
   return (
     <>
       <header className='headerBar u-clearfix js-headerBar'>
@@ -33,23 +51,11 @@ function Header ({ t }, user) {
               <use href='assets/logo.svg#svg' />
             </svg>
           </a>
-          <nav className='navBar u-floatLeft u-desktopBigOnly'>
-            <ul>
-              <li><MenuItem href='/#how-it-works' className='item' icon='assets/help.svg' text={t('így-működik')} title='Így működik' /></li>
-              <li><MenuItem href='/' className='js-newShipmentButton' icon='assets/add-box.svg' text={t('ajánlatkérés')} /></li>
-              <li><MenuItem href='/' className='item' icon='assets/tree.svg' text={t('környezetünkért')} /></li>
-            </ul>
-          </nav>
-          <nav className='navBar navBar--secondary u-right-10 u-desktopBigOnly'>
-            <ul>
-              <li><MenuItem href='/' className='js-openAuthModal' text={t('bejelentkezés')} /></li>
-              <li><MenuItem href='/' className='item' text={t('regisztráció')} /></li>
-              <li><MenuItem href='/' className='item' text={t('segítség')} /></li>
-            </ul>
-          </nav>
+          <NavBar className='navBar u-floatLeft u-desktopBigOnly' data={menuBarLeftItems} itemStyle={menuIconStyle} />
+          <NavBar className='navBar navBar--secondary u-right-10 u-desktopBigOnly' data={menuBarRightItems} itemStyle={menuIconStyle} />
           <a
             className='mobileNavButton u-desktopBigHidden'
-            title='Navigáció'
+            title={t('navigation')}
             onClick={handleCilckButton}
           >
             <img src='assets/menu-icon.svg' className='icn icn--24 icn--primary' />
@@ -57,16 +63,18 @@ function Header ({ t }, user) {
 
         </div>
       </header>
+      {/* <NavBar ref={container} className={`mobileNavDropdown menu u-maxWidth-5 ${isOpenMobilNav}`} data={[...menuBarLeftItems, ...menuBarRightItems]} itemStyle={mobileMenuIconStyle} style={{ right: '51px' }}/> */}
       <nav ref={container} className={`mobileNavDropdown menu u-maxWidth-5 ${isOpenMobilNav}`} style={{ right: '51px' }}>
         <ul>
-          <li><MenuItem href='/#how-it-works' className='icn icn--24 icn--gray' icon='assets/help.svg' text={t('így-működik')} title={t('így-működik')} /></li>
-          <li><MenuItem href='/' className='icn icn--24 icn--gray' icon='assets/add-box.svg' text={t('ajánlatkérés')} title={t('ajánlatkérés')} /></li>
-          <li><MenuItem href='/' className='icn icn--24 icn--gray' icon='assets/tree.svg' text={t('környezetünkért')} title={t('környezetünkért')} /></li>
-          <li><MenuItem href='/' className='icn icn--24 icn--gray' text={t('bejelentkezés')} title={t('bejelentkezés')} /></li>
-          <li><MenuItem href='/' className='item' text={t('regisztráció')} title={t('regisztráció')} /></li>
-          <li><MenuItem href='/' className='item' text={t('segítség')} title={t('segítség')} /></li>
+          <li><MenuItem href='/#how-it-works' className='icn icn--24 icn--gray' icon='assets/help.svg' text={t('how-it-works')} title={t('how-it-works')} style={mobileMenuIconStyle} /></li>
+          <li><MenuItem href='/' className='icn icn--24 icn--gray' icon='assets/add-box.svg' text={t('get-a-quote')} title={t('get-a-quote')} style={mobileMenuIconStyle} /></li>
+          <li><MenuItem href='/' className='icn icn--24 icn--gray' icon='assets/tree.svg' text={t('eco-mission')} title={t('eco-mission')} style={mobileMenuIconStyle} /></li>
+          <li><MenuItem href='/' className='icn icn--24 icn--gray' text={t('login')} title={t('login')} style={mobileMenuIconStyle} /></li>
+          <li><MenuItem href='/' className='item' text={t('signup')} title={t('signup')} style={mobileMenuIconStyle} /></li>
+          <li><MenuItem href='/' className='item' text={t('help')} title={t('help')} style={mobileMenuIconStyle} /></li>
         </ul>
       </nav>
+
     </>
   );
 }

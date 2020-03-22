@@ -1,16 +1,41 @@
 import PropTypes from 'prop-types';
 import { withTranslation } from '../services/i18n';
+import { apiRequest } from '../services/apiRequest';
+import CardList from '../components/list/CardList';
+import InputList from '../components/list/InputList';
 
 function Home ({ t }, user) {
-  function handleSubmit (event) {
+  async function handleSubmit (event) {
     event.preventDefault();
-    const data = new FormData(event.target);
-    const reqBody = {};
-    data.forEach((value, key) => { reqBody[key] = value; });
-    const body = JSON.stringify(reqBody);
-    // apiRequest
-    console.log(body);
+    try {
+      const data = new FormData(event.target);
+      const reqBody = {};
+      data.forEach((value, key) => { reqBody[key] = value; });
+      await apiRequest('backend-url/api', 'POST', reqBody);
+    } catch (err) {
+      console.error(err);
+    }
   }
+
+  const howItWorksData = [{ iconHref: 'assets/cheap.svg#svg', title: t('discount-price'), description: t('discount-price-description') },
+    { iconHref: 'assets/insurance.svg#svg', title: t('insurance'), description: t('insurance-description') },
+    { iconHref: 'assets/cod.svg#svg', title: t('cash-on-delivery-management'), description: t('cash-on-delivery-management-description') },
+    { iconHref: 'assets/integration.svg#svg', title: t('simple-integration'), description: t('simple-integration-description') },
+    { iconHref: 'assets/admin.svg#svg', title: t('user-friendly-administration-interface'), description: t('user-friendly-administration-interface-description') },
+    { iconHref: 'assets/invoice.svg#svg', title: t('transparent-invoicing'), description: t('transparent-invoicing-description') }];
+
+  const inputLeftData = [
+    { label: t('full-name'), name: 'name', type: 'text', placeholder: t('full-name'), required: true },
+    { label: t('phone-number'), name: 'phone', type: 'number', placeholder: t('phone-number'), required: true },
+    { label: t('email'), name: 'email', type: 'email', placeholder: t('email'), required: true }];
+
+  const packageOptions = [1, 2, 3, 4];
+  const monthlyOptions = [1, 2, 3, 4];
+
+  const inputRightData = [
+    { label: t('webstore-url'), name: 'webshop', type: 'url', placeholder: t('webstore-url'), required: true },
+    { label: t('package-dimension'), name: 'product', type: 'number', placeholder: t('please-select'), required: true, list: 'package-dimension', options: packageOptions },
+    { label: t('number-of-monthly-shipments'), name: 'delivery-count', type: 'number', placeholder: t('please-select'), required: true, list: 'monthly-shipments', options: monthlyOptions }];
 
   return (
     <>
@@ -19,76 +44,34 @@ function Home ({ t }, user) {
           <div className='container'>
             <div className='flexRow'>
               <div className='col-6 col-12--md'>
-                <div className='homeHeroSection__text'>
+                <div className='homeHeroSection__text' style={{ width: '100%' }}>
                   <h1>{t('focus-on-really-important-things')}</h1>
-                  <p>{t('imagine-how-much-time')}</p>
-                  <p>{t('can-we-help-you')}</p>
+                  <p>{t('imagine-how-much-time')}
+                  </p>
+                  <p>{t('can-we-help-you')}
+                  </p>
                 </div>
               </div>
-              <div className='col-6 homeHeroSection__illustration'>
-                <img src='assets/illustration.png' srcSet='assets/illustration@2x.png, assets/illustration@3x.png' alt='Fuvarozót keresel? Találd meg a legjobb ajánlatot!' width='395' height='399' className='js-homeMen' style={{ bottom: '0px', position: 'static' }} />
+              <div className='col-6 homeHeroSection__illustration' style={{ objectFit: 'contain' }}>
+                <img src='assets/illustration.png' srcSet='assets/illustration@2x.png, assets/illustration@3x.png' alt='Fuvarozót keresel? Találd meg a legjobb ajánlatot!' width='436' height='436' style={{ left: '20px', top: '50px' }} />
               </div>
             </div>
-            <a className='btn btn--primary btn--big btn--expended--mobile' href='ajanlatkeres' title='Kérj ajánlatot most'>{t('contact-us')}</a>
+            <a className='btn btn--primary btn--big btn--expended--mobile' href='/' title={t('contact-us')}>{t('contact-us')}</a>
           </div>
         </section>
 
-        <section className='fulfillmentPage fulfillmentHeroSection' id='how-it-works'>
+        <section className='fulfillmentPage fulfillmentHeroSection' id='how-it-works' style={{ paddingTop: '80px', paddingBottom: '50px' }}>
           <div className='container'>
             <h1 className='u-maxWidth-16'>{t('how-it-works-in-practice')}</h1>
-            <div className='flexRow'>
-              <div className='col-4 col-12--md u-push-20--tablet'>
-                <svg className='icn icn--48 icn--primary'>
-                  <image href='assets/cheap.svg' />
-                </svg>
-                <h3>{t('discount-price')}</h3>
-                <p>{t('discount-price-description')}</p>
-              </div>
-              <div className='col-4 col-12--md u-push-20--tablet'>
-                <svg className='icn icn--48 icn--primary'>
-                  <image href='assets/insurance.svg' />
-                </svg>
-                <h3>{t('insurance')}</h3>
-                <p>{t('discount-price-description')}</p>
-              </div>
-              <div className='col-4 col-12--md'>
-                <svg className='icn icn--48 icn--primary'>
-                  <image href='assets/cod.svg' />
-                </svg>
-                <h3>{t('cash-on-delivery-management')}</h3>
-                <p>{t('cash-on-delivery-management-description')}</p>
-              </div>
-              <div className='col-4 col-12--md'>
-                <svg className='icn icn--48 icn--primary'>
-                  <image href='assets/integration.svg' />
-                </svg>
-                <h3>{t('simple-integration')}</h3>
-                <p>{t('simple-integration-description')}</p>
-              </div>
-              <div className='col-4 col-12--md'>
-                <svg className='icn icn--48 icn--primary'>
-                  <image href='assets/admin.svg' />
-                </svg>
-                <h3>{t('user-friendly-administration-interface')}</h3>
-                <p>{t('user-friendly-administration-interface-description')}</p>
-              </div>
-              <div className='col-4 col-12--md'>
-                <svg className='icn icn--48 icn--primary'>
-                  <image href='assets/invoice.svg' />
-                </svg>
-                <h3>{t('transparent-invoicing')}</h3>
-                <p>{t('transparent-invoicing-description')}</p>
-              </div>
-            </div>
+            <CardList className='flexRow u-push-30' globalClassName='col-4 col-12--md u-push-30 u-push-30--tablet' globalIconClassName='icn icn--48 icn--primary' data={howItWorksData} />
           </div>
-          <div className='fulfillmentHeroSection__fade' />
         </section>
 
         <section className='fulfillmentPage fulfillmentPartners'>
           <div className='container'>
             <h2>{t('partners')}</h2>
             <p className='u-maxWidth-20 u-center'>
-              {t('partners-description')}<br />
+              {t('partners-description')}
             </p>
             <ul>
               <li>
@@ -107,86 +90,20 @@ function Home ({ t }, user) {
         <section className='fulfillmentPage fulfillmentContact container'>
           <h2>{t('want-more-details')}</h2>
           <p className='u-maxWidth-20 u-center'>{t('enter-your-contact-information')}</p>
-          <form className='flexRow u-maxWidth-20 u-push-20 u-center is-validate js-fulfillmentForm' onSubmit={handleSubmit}>
-            <div className='col-6 col-12--sm'>
-              <div className='col-6 col-12--sm u-push-20'>
-                <label>{t('full-name')}:</label>
-                <input type='text' name='name' className='required' placeholder={t('full-name')} required />
-              </div>
-              <div className='col-6 col-12--sm u-push-20'>
-                <label>{t('phone-number')}:</label>
-                <input type='number' name='phone' className='required' placeholder={t('phone-number')} required />
-              </div>
-              <div className='col-6 col-12--sm u-push-20'>
-                <label>{t('email')}:</label>
-                <input type='email' name='email' className='required' placeholder={t('email')} required />
-              </div>
-            </div>
-            <div className='col-6 col-12--sm'>
-              <div className='col-6 col-12--sm u-push-20'>
-                <label>{t('webstore-url')}:</label>
-                <input type='url' name='webshop' className='required' size='' placeholder={t('webstore-url')} required />
-              </div>
-              <div className='col-6 col-12--sm'>
-                <label>{t('package-dimension')}:</label>
-                <input list='mylist' type='text' name='product' className='required' placeholder={t('package-dimension')} required />
-
-                <datalist id='mylist'>
-                  <option value='1'>one</option>
-                  <option value='2'>two</option>
-                  <option value='3'>three</option>
-                  <option value='4'>four</option>
-                </datalist>
-              </div>
-              <div className='col-6 col-12--sm u-push-20'>
-                <label>{t('number-of-monthly-shipments')}:</label>
-                <input type='number' name='delivery_count' className='required' placeholder={t('number-of-monthly-shipments')} required />
-              </div>
-            </div>
+          <form className='flexRow u-maxWidth-20 u-push-20 u-center' onSubmit={handleSubmit}>
+            <InputList className='col-6 col-12--sm' globalClassName='col-12 col-12--sm u-push-20' globalInputClassName='required' data={inputLeftData} />
+            <InputList className='col-6 col-12--sm' globalClassName='col-12 col-12--sm u-push-20' globalInputClassName='required' data={inputRightData} />
             <div className='col-12'>
-              <button type='submit' className='btn btn--primary btn--expended--mobile'>{t('contact')}</button>
-
+              <button type='submit' className='btn btn--primary btn--expended--mobile' title={t('contact')}>{t('contact')}</button>
             </div>
           </form>
         </section>
       </main>
-      {/* <fieldset>
-          <legend>Selecting elements</legend>
-          <p>
-             <label>Select list</label>
-             <select id = "myList">
-               <option value = "1">one</option>
-               <option value = "2">two</option>
-               <option value = "3">three</option>
-               <option value = "4">four</option>
-             </select>
-          </p>
-       </fieldset> */}
-      {/* <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    `}
-    </style> */}
     </>
   );
 }
 
-Home.getInitialProps = async () => ({
+Home.getServerSideProps = async () => ({
   namespacesRequired: ['common']
 });
 

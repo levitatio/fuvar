@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start -p $PORT",
     "lint": "semistandard --verbose"
   },
   "dependencies": {
     "express": "^4.17.1",
     "next": "9.3.0",
     "next-i18next": "^4.2.1",
+    "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "react": "16.13.0",
     "react-dom": "16.13.0"
