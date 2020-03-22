@@ -5,11 +5,12 @@ function LanguageButton (props) {
   return (
     <a
       className='language-btn'
-      value={props.text}
       title={props.title}
       onClick={() => i18n.changeLanguage(props.language)}
+      style={props.style}
     >
       {props.children}
+      <span>{props.text}</span>
     </a>
   );
 }
