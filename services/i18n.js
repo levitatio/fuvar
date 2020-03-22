@@ -3,7 +3,7 @@ const NextI18Next = require('next-i18next').default;
 const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'hu',
   otherLanguages: ['en', 'hr'],
-  localeSubPath: {
+  localeSubpaths: {
     en: 'en',
     hr: 'hr'
   }

@@ -26,5 +26,6 @@
     "number-of-monthly-shipments": "Number of monthly shipments",
     "contact": "Contact",
     "partners": "Partners",
-    "partners-description": "You can choose from following service providers for each of your shipping assignments. (Of course, you need to sign a contract only with us)"
- }
+    "partners-description": "You can choose from following service providers for each of your shipping assignments. (Of course, you need to sign a contract only with us)",
+    "please-select": "Please select..."
+}
