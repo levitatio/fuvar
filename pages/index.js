@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { withTranslation } from '../services/i18n';
 
-function Home({ t }, user) {
-  function handleSubmit(event) {
+function Home ({ t }, user) {
+  function handleSubmit (event) {
     event.preventDefault();
     const data = new FormData(event.target);
     const reqBody = {};
     data.forEach((value, key) => { reqBody[key] = value; });
     const body = JSON.stringify(reqBody);
-    //apiRequest
+    // apiRequest
     console.log(body);
   }
 
@@ -107,7 +107,7 @@ function Home({ t }, user) {
         <section className='fulfillmentPage fulfillmentContact container'>
           <h2>{t('want-more-details')}</h2>
           <p className='u-maxWidth-20 u-center'>{t('enter-your-contact-information')}</p>
-          <form className='flexRow u-maxWidth-20 u-push-20 u-center is-validate js-fulfillmentForm' onSubmit={handleSubmit} >
+          <form className='flexRow u-maxWidth-20 u-push-20 u-center is-validate js-fulfillmentForm' onSubmit={handleSubmit}>
             <div className='col-6 col-12--sm'>
               <div className='col-6 col-12--sm u-push-20'>
                 <label>{t('full-name')}:</label>
@@ -125,17 +125,17 @@ function Home({ t }, user) {
             <div className='col-6 col-12--sm'>
               <div className='col-6 col-12--sm u-push-20'>
                 <label>{t('webstore-url')}:</label>
-                <input type='url' name='webshop' className='required' size="" placeholder={t('webstore-url')} required />
+                <input type='url' name='webshop' className='required' size='' placeholder={t('webstore-url')} required />
               </div>
               <div className='col-6 col-12--sm'>
                 <label>{t('package-dimension')}:</label>
-                <input list="mylist" type='text' name='product' className='required' placeholder={t('package-dimension')} required />
+                <input list='mylist' type='text' name='product' className='required' placeholder={t('package-dimension')} required />
 
-                <datalist id="mylist">
-                  <option value="1">one</option>
-                  <option value="2">two</option>
-                  <option value="3">three</option>
-                  <option value="4">four</option>
+                <datalist id='mylist'>
+                  <option value='1'>one</option>
+                  <option value='2'>two</option>
+                  <option value='3'>three</option>
+                  <option value='4'>four</option>
                 </datalist>
               </div>
               <div className='col-6 col-12--sm u-push-20'>
@@ -187,7 +187,7 @@ function Home({ t }, user) {
 }
 
 Home.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
+  namespacesRequired: ['common']
 });
 
 Home.propTypes = {

@@ -4,6 +4,16 @@ import MenuItem from '../components/menu/MenuItem';
 import LanguageButton from '../components/button/LanguageButton';
 
 function Footer ({ t }, user) {
+  function handleSubmit (event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const reqBody = {};
+    data.forEach((value, key) => { reqBody[key] = value; });
+    const body = JSON.stringify(reqBody);
+    // apiRequest
+    console.log(body);
+  }
+
   return (
     <footer className='footer js-footer'>
       <div className='container'>
@@ -40,7 +50,13 @@ function Footer ({ t }, user) {
               </ul>
             </li>
           </ul>
-          <form />
+          <form className='' onSubmit={handleSubmit}>
+            <div className='col-6 col-12--sm u-push-20'>
+              <label>{t('subscribe-to-our-newsletter')}:</label>
+              <input type='email' name='name' className='required' placeholder={t('email')} required />
+              <span> <button type='submit' className='btn btn--primary btn--expended--mobile'>{t('subscription')}</button></span>
+            </div>
+          </form>
         </div>
         <div className='footer__middle'>
           <ul className='footer__languages u-push-20--mobile'>
@@ -50,7 +66,7 @@ function Footer ({ t }, user) {
                 className='hungary'
               />
               {'Magyar'}
-                </LanguageButton>
+            </LanguageButton>
             </li>
             <li><LanguageButton className='footer__languages__en' language='en' title='English'>
               <img
@@ -58,7 +74,7 @@ function Footer ({ t }, user) {
                 className='english'
               />
               {'English'}
-                </LanguageButton>
+            </LanguageButton>
             </li>
             <li><LanguageButton className='footer__languages__hr' language='hr' title='Hrvatski'>
               <img
@@ -66,12 +82,12 @@ function Footer ({ t }, user) {
                 className='croatia'
               />
               {'Hrvatski'}
-                </LanguageButton>
+            </LanguageButton>
             </li>
           </ul>
           <p>Fuvar.hu © 2020</p>
         </div>
- 
+
         <div className='footer__bottom'>
           <img
             src='assets/footer-bottom/barion.png'
@@ -93,7 +109,7 @@ function Footer ({ t }, user) {
           />
         </div>
 
-             </div>
+      </div>
     </footer>
   );
 }

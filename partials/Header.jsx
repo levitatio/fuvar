@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import { withTranslation } from '../services/i18n';
 import MenuItem from '../components/menu/MenuItem';
 
-function Header({ t }, user) {
+function Header ({ t }, user) {
   const [isOpenMobilNav, setMobileNav] = useState('u-hidden');
   const container = useRef(null);
 
-  function handleClickOutside(event) {
+  function handleClickOutside (event) {
     if (container.current && !container.current.contains(event.target)) {
       setMobileNav('u-hidden');
     }
   }
 
-  function handleCilckButton() {
+  function handleCilckButton () {
     setMobileNav('');
   }
 
@@ -72,7 +72,7 @@ function Header({ t }, user) {
 }
 
 Header.getServerSideProps = async () => ({
-  namespacesRequired: ['header'],
+  namespacesRequired: ['header']
 });
 
 Header.propTypes = {
